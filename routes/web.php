@@ -32,7 +32,7 @@ Route::prefix('collection/{id}')->group(function () {
 
 //Route Login & Logout
 
-Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
+Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
 
 Route::post('/login', [LoginController::class, 'authenticate']);
 
