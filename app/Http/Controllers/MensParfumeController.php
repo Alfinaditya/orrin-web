@@ -51,7 +51,7 @@ class MensParfumeController extends Controller
             'nama' => 'required',
             'deskripsi' => 'required|max:255',
             'harga' => 'required',
-            // 'link_product' => '',
+            'link_product' => 'required|url',
             'image' => 'image|file|max:5024'
         ]);
 
@@ -109,6 +109,7 @@ class MensParfumeController extends Controller
             'nama' => 'required|max:255',
             'category_id' => 'required',
             'deskripsi' => 'required',
+            'link_product' => 'required|url',
             'image' => 'image|file|max:5024',
             'harga' => 'required'
         ];

@@ -29,8 +29,9 @@ class SweetsParfumeController extends Controller
         $validatedData = $request->validate([
             'nama' => 'required|max:255',
             'category_id' => 'required',
-            'deskripsi' => 'required',
-            'image' => 'image|file|max:1024',
+            'deskripsi' => 'required|max:255',
+            'image' => 'image|file|max:5024',
+            'link_product' => 'required|url',
             'harga' => 'required'
         ]);
 
@@ -66,8 +67,9 @@ class SweetsParfumeController extends Controller
         $rules = [
             'nama' => 'required|max:255',
             'category_id' => 'required',
-            'deskripsi' => 'required',
-            'image' => 'image|file|max:1024',
+            'deskripsi' => 'required|max:255',
+            'image' => 'image|file|max:5024',
+            'link_product' => 'required|url',
             'harga' => 'required'
         ];
 
