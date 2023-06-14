@@ -148,7 +148,7 @@
                     </div>
                     <h3>${result.nama}</h3>
                     <p>${result.deskripsi}</p>
-                    <h5>${result.harga}</h5>
+                    <p>${result.harga}</p>
                 `)
             }
         });
