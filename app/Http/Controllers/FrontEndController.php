@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CasualsParfume;
 use App\Models\MensParfume;
+use App\Models\WomensParfume;
 use App\Models\SweetsParfume;
 use Illuminate\Http\Request;
 
@@ -24,12 +25,18 @@ class FrontEndController extends Controller
         $id = $request->id;
         $data = collect();
         $mens_parfumes = MensParfume::where('category_id', $id)->get();
+        $womens_parfumes = WomensParfume::where('category_id', $id)->get();
         $casual_parfumes = CasualsParfume::where('category_id', $id)->get();
         $sweets_parfume = SweetsParfume::where('category_id', $id)->get();
 
         foreach ($mens_parfumes as $mens_parfume) {
             $mens_parfume->type = 'mens_parfume';
             $data->push($mens_parfume);
+        }
+
+        foreach ($womens_parfumes as $womens_parfumes) {
+            $womens_parfumes->type = 'womens_parfumes';
+            $data->push($womens_parfumes);
         }
 
         foreach ($casual_parfumes as $casual_parfume) {
@@ -53,6 +60,10 @@ class FrontEndController extends Controller
             case 'mens_parfume':
                 $data = MensParfume::where('id', $parfume_id)->first();
                 $recommendations = MensParfume::where('id', '!=', $parfume_id)->first();
+                break;
+            case 'womens_parfume':
+                $data = WomensParfume::where('id', $parfume_id)->first();
+                $recommendations = WomensParfume::where('id', '!=', $parfume_id)->firts();
                 break;
             case 'casual_parfume':
                 $data = CasualsParfume::where('id', $parfume_id)->first();

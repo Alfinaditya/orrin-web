@@ -12,11 +12,14 @@
 
     <!-- Optional JavaScript; choose one of the two! -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://id.allfont.net/allfont.css?fonts=agency-fb" rel="stylesheet" type="text/css" />
+    {{-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> --}}
+    {{-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"> --}}
 
-    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="style.css">
     <title>Hello, world!</title>
 </head>
 
@@ -49,6 +52,10 @@
         @yield('content')
 
     </div>
+
+    <script src="nav.js">
+    </script>
+
 </body>
 
 </html>

@@ -8,9 +8,9 @@
             z-index: 1;
         }
     </style>
-    <nav id="sticky-navbar" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top d-none">
+    {{-- <nav id="sticky-navbar" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top d-none">
         <div class="container-fluid">
-            <img style="width:100px;height:100px;margin-right: 20px" src="{{ asset('/brand.png') }}" alt="">
+            <img style="width:75px;height:75px;margin-right: 20px" src="{{ asset('/brand.png') }}" alt="">
             <a class="navbar-brand" href="/">Orrin Parfume</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,7 +62,8 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> --}}
+
     <div style="position: relative !important;" id="carouselExampleIndicators" class="carousel slide"
         data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -98,15 +99,17 @@
         </button>
     </div>
 
-    <div style="position: absolute;top:50%;right:0;left:0;text-align:center;">
-        <h1 style="color:white;text-align: center;margin-bottom: 21px">GET YOUR BEST FRAGRANCE</h1>
-        <button type="button" class="btn btn-warning">Shop Collection</button>
+    <div class="hero" style="position: absolute;top:30%;right:0;left:0;text-align:center;">
+        <div class="title col-md-12 mx-auto">
+            <h1 style="color:white;text-align: center;">GET YOUR<br>BEST FRAGRANCE</h1>
+        </div>
+        <button type="button" class="btn btn-primary">SHOP COLLECTION</button>
     </div>
 
-    <nav style="background:transparent !important;position:absolute;top:0;width:100%;z-index:2"
+    {{-- <nav style="background:transparent !important;position:absolute;top:0;width:100%;z-index:2"
         class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <img style="width:100px;height:100px;margin-right:20px;" src="{{ asset('/brand.png') }}" alt="">
+            <img style="width:75px;height:75px;margin-right:20px;" src="{{ asset('/brand.png') }}" alt="">
             <a class="navbar-brand" href="/">Orrin Parfume</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -159,19 +162,9 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> --}}
+
 
     @include('about')
     @include('contact')
-    <script>
-        let prevScrollPos = window.pageYOffset;
-        const navbar = document.getElementById('sticky-navbar');
-        window.addEventListener('scroll', () => {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                navbar.classList.remove('d-none');
-            } else {
-                navbar.classList.add('d-none');
-            }
-        });
-    </script>
 @endsection

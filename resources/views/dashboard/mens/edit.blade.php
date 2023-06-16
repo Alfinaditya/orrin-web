@@ -67,7 +67,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="link_product" class="form-label">Link Product</label>
-                            <input type="text" name="link_product" id="link_product" class="form-control @error('link_product') is-invalid @enderror" value="{{ old('harga', $data->harga) }}">
+                            <input type="text" name="link_product" id="link_product" class="form-control @error('link_product') is-invalid @enderror" value="{{ old('link_product', $data->link_product) }}">
                             @error('link_product')
                             <div class="invalid-feedback">
                                 {{ $message }}

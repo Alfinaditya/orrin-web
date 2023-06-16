@@ -59,6 +59,15 @@
                             </div>
                             @enderror
                         </div>
+                        <div class="mb-3">
+                            <label for="link_product" class="form-label">Link Product</label>
+                            <input type="text" name="link_product" id="link_product" class="form-control @error('link_product') is-invalid @enderror">
+                            @error('link_product')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
                         <div class="row">
                             <div class="col d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary">Submit</button>

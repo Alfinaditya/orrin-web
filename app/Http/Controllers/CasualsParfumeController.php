@@ -46,7 +46,7 @@ class CasualsParfumeController extends Controller
             'nama' => 'required|max:255',
             'category_id' => 'required',
             'deskripsi' => 'required|max:255',
-            'image' => 'image|file|max:5024',
+            'image' => 'image|mimes:jpeg,jpg,png',
             'link_product' => 'required|url',
             'harga' => 'required'
         ]);
@@ -103,7 +103,7 @@ class CasualsParfumeController extends Controller
             'nama' => 'required|max:255',
             'category_id' => 'required',
             'deskripsi' => 'required|max:255',
-            'image' => 'image|file|max:5024',
+            'image' => 'image|mimes:jpeg,jpg,png',
             'link_product' => 'required|url',
             'harga' => 'required'
         ];

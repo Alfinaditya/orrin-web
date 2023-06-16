@@ -42,17 +42,13 @@ class MensParfumeController extends Controller
      */
     public function store(Request $request)
     {
-        // dd('dsadsa');
-        // dd($request->all());
-
-
         $validatedData = $request->validate([
             'category_id' => 'required',
             'nama' => 'required',
             'deskripsi' => 'required|max:255',
             'harga' => 'required',
             'link_product' => 'required|url',
-            'image' => 'image|file|max:5024'
+            'image' => 'image|mimes:jpeg,jpg,png'
         ]);
 
         //cek gambar kosong atau tidak
@@ -110,7 +106,7 @@ class MensParfumeController extends Controller
             'category_id' => 'required',
             'deskripsi' => 'required',
             'link_product' => 'required|url',
-            'image' => 'image|file|max:5024',
+            'image' => 'image|mimes:jpeg,jpg,png',
             'harga' => 'required'
         ];
 
