@@ -24,6 +24,8 @@ Route::get('/', [FrontEndController::class, 'index']);
 
 Route::get('/article', [FrontEndController::class, 'article']);
 
+Route::get('/collections', [FrontEndController::class, 'collections']);
+
 Route::prefix('collection/{id}')->group(function () {
     Route::get('/', [FrontEndController::class, 'collection']);
     Route::get('/detail/{parfume_id}/{type}', [FrontEndController::class, 'collectionDetail']);

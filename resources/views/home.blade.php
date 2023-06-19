@@ -103,7 +103,10 @@
         <div class="title col-md-12 mx-auto">
             <h1 style="color:white;text-align: center;">GET YOUR<br>BEST FRAGRANCE</h1>
         </div>
-        <button type="button" class="btn btn-primary">SHOP COLLECTION</button>
+        <a class="btn btn-primary" href="/collections">
+            SHOP COLLECTION
+        </a>
+        {{-- <button type="button" class="btn btn-primary">SHOP COLLECTION</button> --}}
     </div>
 
     {{-- <nav style="background:transparent !important;position:absolute;top:0;width:100%;z-index:2"
