@@ -8,6 +8,7 @@
             z-index: 1;
         }
     </style>
+    @include('partials.nav')
     {{-- <nav id="sticky-navbar" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top d-none">
         <div class="container-fluid">
             <img style="width:75px;height:75px;margin-right: 20px" src="{{ asset('/brand.png') }}" alt="">
@@ -64,8 +65,7 @@
         </div>
     </nav> --}}
 
-    <div style="position: relative !important;" id="carouselExampleIndicators" class="carousel slide"
-        data-bs-ride="carousel">
+    <div style="position: relative !important;" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
@@ -163,7 +163,6 @@
             </div>
         </div>
     </nav> --}}
-
 
     @include('about')
     @include('contact')

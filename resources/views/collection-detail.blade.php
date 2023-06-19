@@ -1,5 +1,6 @@
 @extends('app')
 @section('content')
+    @include('partials.nav')
     <div style="display:flex;background:green;justify-content: center;align-items:center">
         <img src="{{ asset('storage/' . $collection->image) }}" alt="">
         <div>

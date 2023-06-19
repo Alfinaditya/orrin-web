@@ -20,10 +20,21 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+        integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
     <title>Hello, world!</title>
 </head>
 
 <body>
+    {{-- @auth
+    <div class="alert alert-primary" role="alert">
+        Welcome Back, {{ auth()->user()->name }}
+    </div>
+    @endauth --}}
+    <section id="main">
+        @yield('content')
+    </section>
+
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -39,21 +50,27 @@
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
     -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
-        integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
-    {{-- @auth
-    <div class="alert alert-primary" role="alert">
-        Welcome Back, {{ auth()->user()->name }}
-    </div>
-    @endauth --}}
 
-    <div>
-        @include('partials.nav')
-        @yield('content')
+    <script>
+        const menu = document.querySelector(".menu-list");
+        const navbar = document.querySelector(".navbar");
+        const menuBtn = document.querySelector(".menu-btn");
+        const cancelBtn = document.querySelector(".cancel-btn");
 
-    </div>
+        menuBtn.onclick = () => {
+            menu.classList.add("active");
+            menuBtn.classList.add("hide");
+        };
+        cancelBtn.onclick = () => {
+            menu.classList.remove("active");
+            menuBtn.classList.remove("hide");
+        };
 
-    <script src="nav.js">
+        window.onscroll = () => {
+            this.scrollY > 20 ?
+                navbar.classList.add("sticky") :
+                navbar.classList.remove("sticky");
+        };
     </script>
 
 </body>
