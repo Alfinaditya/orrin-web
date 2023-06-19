@@ -20,6 +20,37 @@ class FrontEndController extends Controller
         return view('article');
     }
 
+    public function collections()
+    {
+        $mens_parfumes = MensParfume::get();
+        $womens_parfumes = WomensParfume::get();
+        $casual_parfumes = CasualsParfume::get();
+        $sweets_parfume = SweetsParfume::get();
+        $data = collect();
+
+        foreach ($mens_parfumes as $mens_parfume) {
+            $mens_parfume->type = 'mens_parfume';
+            $data->push($mens_parfume);
+        }
+
+        foreach ($womens_parfumes as $womens_parfumes) {
+            $womens_parfumes->type = 'womens_parfumes';
+            $data->push($womens_parfumes);
+        }
+
+        foreach ($casual_parfumes as $casual_parfume) {
+            $casual_parfume->type = 'casual_parfume';
+            $data->push($casual_parfume);
+        }
+
+        foreach ($sweets_parfume as $sweet_parfume) {
+            $sweet_parfume->type = 'sweet_parfume';
+            $data->push($sweet_parfume);
+        }
+
+        return view('collections', ['collections' => $data]);
+    }
+
     public function collection(Request $request, $id)
     {
         $id = $request->id;

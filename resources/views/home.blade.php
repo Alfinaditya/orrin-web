@@ -64,8 +64,7 @@
         </div>
     </nav> --}}
 
-    <div style="position: relative !important;" id="carouselExampleIndicators" class="carousel slide"
-        data-bs-ride="carousel">
+    <div style="position: relative !important;" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
@@ -103,7 +102,10 @@
         <div class="title col-md-12 mx-auto">
             <h1 style="color:white;text-align: center;">GET YOUR<br>BEST FRAGRANCE</h1>
         </div>
-        <button type="button" class="btn btn-primary">SHOP COLLECTION</button>
+        <a class="btn btn-primary" href="/collections">
+            SHOP COLLECTION
+        </a>
+        {{-- <button type="button" class="btn btn-primary">SHOP COLLECTION</button> --}}
     </div>
 
     {{-- <nav style="background:transparent !important;position:absolute;top:0;width:100%;z-index:2"

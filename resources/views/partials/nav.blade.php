@@ -72,16 +72,15 @@
 <nav class="navbar bg-body-tertiary">
     <div class="content">
         <div class="logo container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="brand.png" alt="Logo"
-                    class="d-inline-block">ORRIN<br>PARFUME
+            <a class="navbar-brand" href="/">
+                <img src="brand.png" alt="Logo" class="d-inline-block">ORRIN<br>PARFUME
             </a>
         </div>
         <ul class="menu-list" id="menu-list">
             <div class="icon cancel-btn">
                 <i class='bx bx-x'></i>
             </div>
-            <li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="/">HOME</a></li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
@@ -89,12 +88,13 @@
                 </a>
                 <ul class="dropdown-menu">
                     @foreach ($categories as $category)
-                        <li><a class="dropdown-item" href="#">{{ $category->kategori }}</a></li>
+                        <li><a class="dropdown-item"
+                                href="/collection/{{ $category->id }}">{{ $category->kategori }}</a></li>
                     @endforeach
                 </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#">ABOUT</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">CONTACT</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
         </ul>
         <div class="icon menu-btn" id="menu-btn">
             <i class='bx bx-menu'></i>
