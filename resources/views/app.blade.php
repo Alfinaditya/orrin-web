@@ -19,7 +19,7 @@
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
         integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
     <title>Orrin Parfume</title>
@@ -32,7 +32,11 @@
     </div>
     @endauth --}}
     <section id="main">
-        @yield('content')
+        @include('partials.nav')
+        <div style="min-height: 100vh">
+            @yield('content')
+        </div>
+        @include('contact')
     </section>
 
 

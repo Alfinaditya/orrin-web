@@ -79,6 +79,7 @@ class FrontEndController extends Controller
             $sweet_parfume->type = 'sweet_parfume';
             $data->push($sweet_parfume);
         }
+        // dd($data);
         return view('collection', ['collections' => $data, 'id' => $id]);
     }
 

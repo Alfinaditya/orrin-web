@@ -1,20 +1,24 @@
 @extends('app')
 @section('content')
     <style>
-        h2 {
-            color: white
+        a {
+            color: white !important;
         }
     </style>
-    <div style="background:#212529;">
+    <div style="padding-top:120px">
         <h4>Recommendations</h4>
-        {{-- @dd($collections) --}}
-        <div style="display:flex;">
+        <div style="display:flex;flex-wrap:wrap;">
             @foreach ($collections as $collection)
-                <a style="text-decoration:none" href="/collection/{{ $collection->category_id }}/detail/{{ $collection->id }}/{{ $collection->type }}">
-                    <div style="background:#3A2E18;margin-right:26px;margin-top:80px">
-                        <img src="{{ asset('storage/' . $collection->image) }}" style="width: 250px" alt="">
-                        <h2>{{ $collection->nama }}</h2>
-                        <h2>Rp {{ $collection->harga }}</h2>
+                <a style="text-decoration:none"
+                    href="/collection/{{ $collection->category_id }}/detail/{{ $collection->id }}/{{ $collection->type }}">
+                    <div
+                        style="background:#3A2E18;height:400px;margin-right:6px;margin-bottom:80px;display:flex;flex-direction:column;justify-content:space-between">
+                        <img src="{{ asset('storage/' . $collection->image) }}" alt=""
+                            style="height:400px;width:320px;margin:15px">
+                        <div>
+                            <h4>{{ $collection->nama }}</h4>
+                            <p>Rp {{ $collection->harga }}</p>
+                        </div>
                     </div>
                 </a>
             @endforeach
