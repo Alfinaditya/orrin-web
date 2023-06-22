@@ -6,10 +6,13 @@
             Dengan Harga Terbaik</h4>
     </div>
     <div>
-        <div style="margin-bottom:40px;display:flex;">
-            <i class="bi bi-map" style="font-size: 24px"></i>
-            <p style="margin-left: 10px">Gunungsari Indah Blok XX No 2 Surabaya</p>
-        </div>
+        <a href="https://maps.app.goo.gl/umaneKX9R3Z2iuhp7" style="text-decoration: none;color:white;" target="_blank"
+            rel="noopener noreferrer">
+            <div style="margin-bottom:40px;display:flex;">
+                <i class="bi bi-map" style="font-size: 24px"></i>
+                <p style="margin-left: 10px">Gunungsari Indah Blok XX No 2 Surabaya</p>
+            </div>
+        </a>
 
         <a style="text-decoration:none;color:white" href="https://wa.me/+6285232905378" target="_blank"
             rel="noopener noreferrer">
