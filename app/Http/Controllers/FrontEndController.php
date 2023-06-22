@@ -15,9 +15,9 @@ class FrontEndController extends Controller
         return view('home');
     }
 
-    public function article()
+    public function about()
     {
-        return view('article');
+        return view('about');
     }
 
     public function collections()

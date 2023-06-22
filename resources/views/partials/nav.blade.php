@@ -26,8 +26,7 @@
                         @endforeach
                     </ul>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="/article">ARTICLE</a></li>
-                {{-- <li class="nav-item"><a class="nav-link" href="/contact">CONTACT</a></li> --}}
+                <li class="nav-item"><a class="nav-link" href="/about">ABOUT</a></li>
             </ul>
             <div class="icon menu-btn" id="menu-btn">
                 <i class='bx bx-menu'></i>
@@ -59,7 +58,7 @@
                         @endforeach
                     </ul>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="/article">ARTICLE</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about">ABOUT</a></li>
             </ul>
             <div class="icon menu-btn" id="menu-btn">
                 <i class='bx bx-menu'></i>

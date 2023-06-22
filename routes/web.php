@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontEndController::class, 'index']);
 
-Route::get('/article', [FrontEndController::class, 'article']);
+Route::get('/about', [FrontEndController::class, 'about']);
 
 Route::get('/collections', [FrontEndController::class, 'collections']);
 

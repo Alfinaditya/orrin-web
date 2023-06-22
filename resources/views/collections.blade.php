@@ -4,6 +4,22 @@
         a {
             color: white !important;
         }
+
+        .product {
+            background: #8F6F37;
+            height: 400px;
+            margin-right: 6px;
+            margin-bottom: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .product:hover {
+            background: #3A2E18;
+        }
     </style>
     <div style="padding-top:120px">
         <h4>Recommendations</h4>
@@ -11,11 +27,10 @@
             @foreach ($collections as $collection)
                 <a style="text-decoration:none"
                     href="/collection/{{ $collection->category_id }}/detail/{{ $collection->id }}/{{ $collection->type }}">
-                    <div
-                        style="background:#3A2E18;height:400px;margin-right:6px;margin-bottom:80px;display:flex;flex-direction:column;justify-content:space-between">
-                        <img src="{{ asset('storage/' . $collection->image) }}" alt=""
-                            style="height:400px;width:320px;margin:15px">
-                        <div>
+                    <div class="product">
+                        <img src="{{ asset('/about.webp') }}" alt=""
+                            style="height:400px;width:320px;margin:15px;border-radius:15px">
+                        <div style="padding:15px;">
                             <h4>{{ $collection->nama }}</h4>
                             <p>Rp {{ $collection->harga }}</p>
                         </div>
