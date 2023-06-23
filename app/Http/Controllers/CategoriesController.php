@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categories;
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Yajra\Datatables\Datatables;
+use Illuminate\Support\Facades\Storage;
 
 class CategoriesController extends Controller
 {
@@ -15,11 +18,16 @@ class CategoriesController extends Controller
      */
     public function index()
     {
+        // $result = DB::table('categories')->rightJoin('products', 'products.category_id', '=', 'categories.id')->count();
+
+        $result = Categories::with('products')->get()->all();
 
         return view('dashboard.index', [
-            'data' => Categories::where('user_id', auth()->user()->id)->with('users')->get(),
-        ]);
+            'data' => $result
+
+        ], compact('result'));
     }
+    
 
     public function cat()
     {
@@ -57,7 +65,7 @@ class CategoriesController extends Controller
 
         Categories::create($validatedData);
 
-        return redirect('/dashboard/categories')->with('success', 'Data berhasil ditambahkan!');
+        return redirect('/dashboard/kategori')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -100,7 +108,7 @@ class CategoriesController extends Controller
 
         Categories::where('kategori', $id->kategori)->update($validatedData);
 
-        return redirect('/dashboard/categories')->with('success', 'Data berhasil dihapus!');
+        return redirect('/dashboard/kategori')->with('success', 'Data berhasil dihapus!');
     }
 
     /**
@@ -117,7 +125,7 @@ class CategoriesController extends Controller
 
         Categories::destroy($id->id);
 
-        return redirect('/dashboard/categories')->with('success', 'Data berhasil diubah!');
+        return redirect('/dashboard/kategori')->with('success', 'Data berhasil diubah!');
     }
 
     public function listParfume()
@@ -133,5 +141,14 @@ class CategoriesController extends Controller
             })
             ->addIndexColumn()
             ->make(true);
+    }
+
+    public function ajaxParfume(Request $request)
+    {
+        $data = Product::where('id', $request->id)
+            ->with('users')
+            ->first();
+        $data->image = asset('storage/' . $data->image);
+        return $data;
     }
 }

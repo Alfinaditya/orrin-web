@@ -6,7 +6,10 @@ use App\Http\Controllers\WomensParfumeController;
 use App\Http\Controllers\SweetsParfumeController;
 use App\Http\Controllers\CasualsParfumeController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\CategoryProductController;
 use App\Http\Controllers\FrontEndController;
+use App\Http\Controllers\ProductController;
+use App\Models\CategoryProduct;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,21 +49,46 @@ Route::post('/logout', [LoginController::class, 'logout']);
 //     return view('dashboard.index');
 // })->middleware('auth');
 
-Route::get('/dashboard', [CategoriesController::class, 'index'])->middleware('auth')->name('login');
+Route::get('/dashboard', [CategoryProductController::class, 'index'])->middleware('auth')->name('login');
+
+// Route::get('/dashboard/detail/{id}', [CategoryProductController::class, 'detail']);
 
 //Route Categories
 
-Route::get('/dashboard/categories', [CategoriesController::class, 'cat']);
+Route::get('/dashboard/kategori', [CategoriesController::class, 'cat']);
 
-Route::get('/dashboard/categories/create', [CategoriesController::class, 'create']);
+// Route::get('/dashboard/detail', [CategoriesController::class, 'detail_batch']);
 
-Route::post('/dashboard/categories', [CategoriesController::class, 'store']);
+Route::get('/dashboard/kategori/create', [CategoriesController::class, 'create']);
 
-Route::get('dashboard/categories/{id}/edit', [CategoriesController::class, 'edit']);
+Route::post('/dashboard/kategori', [CategoriesController::class, 'store']);
 
-Route::post('dashboard/categories/{id}', [CategoriesController::class, 'update']);
+Route::get('dashboard/kategori/{id}/edit', [CategoriesController::class, 'edit']);
 
-Route::get('dashboard/categories/{id}', [CategoriesController::class, 'destroy']);
+Route::post('dashboard/kategori/{id}', [CategoriesController::class, 'update']);
+
+Route::get('dashboard/kategori/{id}', [CategoriesController::class, 'destroy']);
+
+//Route Category Parfume
+Route::get('/dashboard/jenis', [CategoryProductController::class, 'show']);
+Route::get('/dashboard/jenis/create', [CategoryProductController::class, 'create']);
+Route::post('/dashboard/jenis', [CategoryProductController::class, 'store']);
+Route::get('/dashboard/jenis/{id}/edit', [CategoryProductController::class, 'edit']);
+Route::post('/dashboard/jenis/{id}', [CategoryProductController::class, 'update']);
+Route::get('/dashboard/jenis/{id}', [CategoryProductController::class, 'destroy']);
+
+//Route Product
+Route::get('/dashboard/product', [ProductController::class, 'index']);
+
+Route::get('/dashboard/product/create', [ProductController::class, 'create']);
+
+Route::post('/dashboard/product', [ProductController::class, 'store']);
+
+Route::get('/dashboard/product/{id}/edit', [ProductController::class, 'edit']);
+
+Route::post('/dashboard/product/{id}', [ProductController::class, 'update']);
+
+Route::get('/dashboard/product/{id}', [ProductController::class, 'destroy']);
 
 
 //Route Dashboard Mens Parfume
@@ -128,15 +156,16 @@ Route::post('dashboard/casuals/{id}', [CasualsParfumeController::class, 'update'
 Route::get('dashboard/casuals/{id}', [CasualsParfumeController::class, 'destroy']);
 
 Route::prefix('dt')->group(function () {
-    Route::get('/categories-parfume', [CategoriesController::class, 'listParfume']);
-    Route::get('/mens-parfume', [MensParfumeController::class, 'listParfume']);
+    Route::get('/kategori-parfume', [CategoriesController::class, 'listParfume']);
+    Route::get('/jenis-parfume', [CategoryProductController::class, 'listParfume']);
+    Route::get('/product', [ProductController::class, 'listParfume']);
     Route::get('/womens-parfume', [WomensParfumeController::class, 'listParfume']);
     Route::get('/sweets-parfume', [SweetsParfumeController::class, 'listParfume']);
     Route::get('/casuals-parfume', [CasualsParfumeController::class, 'listParfume']);
 });
 
 Route::prefix('ajax')->group(function () {
-    Route::get('/mens-preview', [MensParfumeController::class, 'ajaxParfume']);
+    Route::get('/product-preview', [ProductController::class, 'ajaxParfume']);
     Route::get('/womens-preview', [WomensParfumeController::class, 'ajaxParfume']);
     Route::get('/sweets-preview', [SweetsParfumeController::class, 'ajaxParfume']);
     Route::get('/casuals-preview', [CasualsParfumeController::class, 'ajaxParfume']);

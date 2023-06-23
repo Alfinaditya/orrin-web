@@ -7,7 +7,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
-                    <form method="post" action="/dashboard/kategori/{{ $data->id }}">
+                    <form method="post" action="/dashboard/jenis/{{ $data->id }}">
                         @csrf
                         <div class="mb-3">
                             <h1 class="h3">Edit Data</h1>

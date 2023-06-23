@@ -36,7 +36,7 @@
     <div class="container">
         <div class="row">
             <div class="col my-3 d-flex justify-content-start">
-                <a href="/dashboard/kategori/create" class="btn btn-primary btn-sm py-1"><span data-feather="plus-circle" style="width: 18px; height: 18px;"></span>Tambah
+                <a href="/dashboard/jenis/create" class="btn btn-primary btn-sm py-1"><span data-feather="plus-circle" style="width: 18px; height: 18px;"></span>Tambah
                     Data</a>
             </div>
         </div>
@@ -49,7 +49,7 @@
                     <thead>
                         <tr class="text-center">
                             <th scope="col" width="50">No</th>
-                            <th scope="col">Kategori</th>
+                            <th scope="col">Kategori Parfume</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -67,7 +67,7 @@
             }
 
         , ajax: {
-            url: '/dt/kategori-parfume'
+            url: '/dt/jenis-parfume'
             , type: 'GET'
         }
         , columns: [{
@@ -82,8 +82,8 @@
                 data: 'action'
                 , render: function(data) {
                     return `
-                        <a href="/dashboard/kategori/${data}/edit" class="badge bg-warning"><span data-feather="edit" class="align-text-bottom"></span></a>
-                        <a href="/dashboard/kategori/${data}" class="badge bg-danger" onclick="return confirm('Hapus Data?')"><span data-feather="x-circle" class="align-text-bottom"></span></a>
+                        <a href="/dashboard/jenis/${data}/edit" class="badge bg-warning"><span data-feather="edit" class="align-text-bottom"></span></a>
+                        <a href="/dashboard/jenis/${data}" class="badge bg-danger" onclick="return confirm('Hapus Data?')"><span data-feather="x-circle" class="align-text-bottom"></span></a>
                         `
                 }
 

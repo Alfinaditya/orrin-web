@@ -14,40 +14,26 @@
             <span class="tooltip">Dashboard</span>
         </li>
         <li>
-            <a href="/dashboard/categories">
+            <a href="/dashboard/kategori">
                 <i class='bx bx-category-alt'></i>
-                <span class="link_name">Category</span>
+                <span class="link_name">Kategori Parfum</span>
             </a>
-            <span class="tooltip">Category</span>
+            <span class="tooltip">Kategori Parfum</span>
+        </li>
+                <li>
+            <a href="/dashboard/jenis">
+                <i class='bx bx-folder'></i>
+                <span class="link_name">Jenis</span>
+            </a>
+            <span class="tooltip">Jenis</span>
         </li>
 
         <li>
-            <a href="/dashboard/mens">
-                <i class='bx bx-male-sign'></i>
-                <span class="link_name">Men</span>
+            <a href="/dashboard/product">
+<i class='bx bx-purchase-tag'></i>
+                <span class="link_name">Product</span>
             </a>
-            <span class="tooltip">Men</span>
-        </li>
-        <li>
-            <a href="/dashboard/womens">
-                <i class='bx bx-female-sign'></i>
-                <span class="link_name">Women</span>
-            </a>
-            <span class="tooltip">Women</span>
-        </li>
-        <li>
-            <a href="/dashboard/sweets">
-                <i class='bx bxs-heart'></i>
-                <span class="link_name">Sweet</span>
-            </a>
-            <span class="tooltip">Sweet</span>
-        </li>
-        <li>
-            <a href="/dashboard/casuals">
-                <i class='bx bx-hive'></i>
-                <span class="link_name">Casual</span>
-            </a>
-            <span class="tooltip">Casual</span>
+            <span class="tooltip">Product</span>
         </li>
         <li class="profile">
             <div class="profile_details">

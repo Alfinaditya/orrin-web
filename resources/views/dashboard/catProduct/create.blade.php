@@ -7,14 +7,14 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
-                    <form method="post" action="/dashboard/kategori/{{ $data->id }}">
+                    <form method="post" action="/dashboard/jenis">
                         @csrf
                         <div class="mb-3">
-                            <h1 class="h3">Edit Data</h1>
+                            <h1 class="h3">Tambah Data</h1>
                         </div>
                         <div class="mb-3">
                             <label for="kategori" class="form-label">Nama Kategori</label>
-                            <input type="text" class="form-control @error('kategori') is-invalid @enderror" id="kategori" name="kategori" required autofocus value="{{ old('kategori', $data->kategori) }}">
+                            <input type="text" class="form-control @error('kategori') is-invalid @enderror" id="kategori" name="kategori" required autofocus value="{{ old ('kategori') }}">
                             @error('kategori')
                             <div class="invalid-feedback">
                                 {{ $message }}
