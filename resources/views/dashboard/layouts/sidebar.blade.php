@@ -20,7 +20,7 @@
             </a>
             <span class="tooltip">Kategori Parfum</span>
         </li>
-                <li>
+        <li>
             <a href="/dashboard/jenis">
                 <i class='bx bx-folder'></i>
                 <span class="link_name">Jenis</span>
@@ -30,7 +30,7 @@
 
         <li>
             <a href="/dashboard/product">
-<i class='bx bx-purchase-tag'></i>
+                <i class='bx bx-purchase-tag'></i>
                 <span class="link_name">Product</span>
             </a>
             <span class="tooltip">Product</span>
