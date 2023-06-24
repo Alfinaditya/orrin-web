@@ -11,15 +11,8 @@ use Illuminate\Support\Facades\Storage;
 
 class CategoriesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        // $result = DB::table('categories')->rightJoin('products', 'products.category_id', '=', 'categories.id')->count();
-
         $result = Categories::with('products')->get()->all();
 
         return view('dashboard.index', [
@@ -28,20 +21,13 @@ class CategoriesController extends Controller
         ], compact('result'));
     }
     
-
     public function cat()
     {
-
         return view('dashboard.categories.index', [
             'data' => Categories::where('user_id', auth()->user()->id)->with('users')->get(),
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('dashboard.categories.create', [
@@ -49,12 +35,6 @@ class CategoriesController extends Controller
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -68,21 +48,6 @@ class CategoriesController extends Controller
         return redirect('/dashboard/kategori')->with('success', 'Data berhasil ditambahkan!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Categories  $categories
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Categories $id)
-    { }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Categories  $categories
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Categories $id)
     {
         return view('dashboard.categories.edit', [
@@ -91,13 +56,6 @@ class CategoriesController extends Controller
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Categories  $categories
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Categories $id)
     {
         $validatedData = $request->validate([
@@ -111,12 +69,6 @@ class CategoriesController extends Controller
         return redirect('/dashboard/kategori')->with('success', 'Data berhasil dihapus!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Categories  $categories
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Categories $id)
     {
         if ($id->image) {

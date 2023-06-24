@@ -11,11 +11,6 @@ use Yajra\Datatables\Datatables;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         return view('dashboard.product.index', [
@@ -25,11 +20,6 @@ class ProductController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('dashboard.product.create', [
@@ -42,12 +32,6 @@ class ProductController extends Controller
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -72,23 +56,11 @@ class ProductController extends Controller
         return redirect('/dashboard/product')->with('success', 'Data berhasil ditambahkan!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
     public function show(Product $product)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Product $id)
     {
         return view('dashboard.product.edit', [
@@ -98,13 +70,6 @@ class ProductController extends Controller
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Product $id)
     {
 
@@ -119,7 +84,6 @@ class ProductController extends Controller
         ];
 
         $validatedData = $request->validate($rules);
-// dd('sds');
         //cek gambar kosong atau tidak
         if ($request->file('image')) {
             //Hapus gambar lama
@@ -131,18 +95,11 @@ class ProductController extends Controller
 
         $validatedData['user_id'] = auth()->user()->id;
 
-        // dd('pk');
         Product::where('id', $id->id)->update($validatedData);
 
         return redirect('/dashboard/product')->with('success', 'Data Berhasil Diubah');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Product $id)
     {
         if ($id->image) {
@@ -179,9 +136,6 @@ class ProductController extends Controller
             ->editColumn('image', function ($item) {
                 return asset('storage/' . $item->image);
             })
-            //    ->editColumn('image', function ($item) {
-            //     return asset('storage/' . $item->image);
-            // })
             ->addIndexColumn()
             ->make(true);
     }

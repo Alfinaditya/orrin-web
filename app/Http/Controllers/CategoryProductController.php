@@ -10,12 +10,6 @@ use Illuminate\Support\Facades\DB;
 
 class CategoryProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
     public function index(CategoryProduct $id)
     {
         return view('dashboard.index', [
@@ -28,15 +22,13 @@ class CategoryProductController extends Controller
 
     public function detail(CategoryProduct $id, Request $request)
     {
-        // $data = DB::table('categories')->Join('products', 'products.category_id', '=', 'category_product.id')->get()->all();
-        // dd($data);
         return view('dashboard.detail', [
             'id' => $id,
             'data' => CategoryProduct::with('products')->where('id', '=', 'category_product_id' )
         ]);
     }
 
-        public function show()
+    public function show()
     {
         return view('dashboard.catProduct.index', [
             'data' => CategoryProduct::where('user_id', auth()->user()->id)
@@ -45,11 +37,6 @@ class CategoryProductController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('dashboard.catProduct.create', [
@@ -59,12 +46,6 @@ class CategoryProductController extends Controller
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -78,23 +59,6 @@ class CategoryProductController extends Controller
         return redirect('/dashboard/jenis')->with('success', 'Data berhasil ditambahkan!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\CategoryProduct  $categoryProduct
-     * @return \Illuminate\Http\Response
-     */
-    // public function show(CategoryProduct $categoryProduct)
-    // {
-    //     //
-    // }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\CategoryProduct  $categoryProduct
-     * @return \Illuminate\Http\Response
-     */
     public function edit(CategoryProduct $id)
     {
         return view('dashboard.catProduct.edit', [
@@ -103,13 +67,6 @@ class CategoryProductController extends Controller
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\CategoryProduct  $categoryProduct
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, CategoryProduct $id)
     {
         $validatedData = $request->validate([
@@ -123,12 +80,6 @@ class CategoryProductController extends Controller
         return redirect('/dashboard/jenis')->with('success', 'Data berhasil dihapus!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\CategoryProduct  $categoryProduct
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(CategoryProduct $id)
     {
         CategoryProduct::destroy($id->id);
