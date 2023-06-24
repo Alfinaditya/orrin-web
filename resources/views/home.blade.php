@@ -20,13 +20,13 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{ asset('/home-bg.webp') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('/home1.webp') }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('/home-bg.webp') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('/home2.webp') }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('/home-bg.webp') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('/home3.webp') }}" class="d-block w-100" alt="...">
             </div>
         </div>
 
@@ -110,8 +110,8 @@
             </div>
         </div>
     </nav> --}}
-    <div id="about" style="width:90%;margin:auto;margin-bottom:100px;padding-top:120px">
-        <h2 class="text-center" style="margin-bottom: 20px">WHY ORRIN PARFUME ?</h2>
+    <div id="about" style="width:90%;margin:auto;margin-bottom:100px;padding-top:50px">
+        <h2 class="text-center" style="margin-bottom: 50px; margin-top: 50">WHY ORRIN PARFUME ?</h2>
         <div style="display:flex;align-items: center;">
             <p style="margin-right:100px">Untuk pengalaman wangi yang luar biasa dan kualitas yang terjamin. Dibuat
                 dengan
@@ -120,7 +120,7 @@
                 canggih. Orrin Parfume memberikan aroma yang tahan lama dan elegan akan membuat Kamu selalu terlihat dan
                 terasa
                 percaya diri.</p>
-            <img id="about-image" style="width:800px;height:479.57px" src="{{ asset('/about.webp') }}" alt="">
+            <img id="about-image" style="width:800px;height:479.57px; border-radius:8px" src="{{ asset('/home4.webp') }}" alt="">
         </div>
     </div>
 @endsection

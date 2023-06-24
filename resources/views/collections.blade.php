@@ -21,15 +21,15 @@
             background: #3A2E18;
         }
     </style>
-    <div style="padding-top:120px">
+    <div style="margin-left:20px;padding-top:120px">
         <h4>Recommendations</h4>
-        <div style="display:flex;flex-wrap:wrap;">
+        <div style="display:flex;flex-wrap:wrap;margin-top:20px">
             @foreach ($collections as $collection)
                 <a style="text-decoration:none"
                     href="/collection/{{ $collection->category_id }}/detail/{{ $collection->id }}/{{ $collection->type }}">
                     <div class="product">
-                        <img src="{{ asset('/about.webp') }}" alt=""
-                            style="height:400px;width:320px;margin:15px;border-radius:15px">
+                        <img src="{{ asset('storage/' . $collection->image) }}" alt=""
+                            style="height:400px;width:270px;margin:15px;border-radius:15px">
                         <div style="padding:15px;">
                             <h4>{{ $collection->nama }}</h4>
                             <p>Rp {{ $collection->harga }}</p>

@@ -2,7 +2,7 @@
     style="display:flex;justify-content:space-between;padding:35px;margin:auto;background: #1b1b1b;color:white">
     <div style="display: flex;align-items:center">
         <img src="/brand.png" style="margin-bottom: 20px" width="124" height="124" alt="">
-        <h4 style="width:250px;margin-left:40px">Kualitas Parfum Terbaik
+        <h4 style="width:280px;margin-left:40px">Kualitas Parfum Terbaik
             Dengan Harga Terbaik</h4>
     </div>
     <div>

@@ -197,7 +197,7 @@ body {
     border: none;
     border-radius: 0px 8px;
 }
-
+/* 
 .btn:hover {
     color: white;
     font-size: 14px;
@@ -209,11 +209,11 @@ body {
     border: 1px solid #cfa968;
     border-radius: 0px 8px;
     transition: all 0.3s ease;
-}
+} */
 
-.card .card-body .card-title h5 {
+/* .card .card-body .card-title h5 {
     font-size: 22px;
-}
+} */
 
 @media (max-width: 868px) {
     .icon {

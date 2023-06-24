@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CasualsParfume;
 use App\Models\MensParfume;
+use App\Models\Product;
 use App\Models\WomensParfume;
 use App\Models\SweetsParfume;
 use Illuminate\Http\Request;
@@ -22,10 +23,10 @@ class FrontEndController extends Controller
 
     public function collections()
     {
-        $mens_parfumes = MensParfume::get();
-        $womens_parfumes = WomensParfume::get();
-        $casual_parfumes = CasualsParfume::get();
-        $sweets_parfume = SweetsParfume::get();
+        $mens_parfumes = Product::get();
+        $womens_parfumes = Product::get();
+        $casual_parfumes = Product::get();
+        $sweets_parfume = Product::get();
         $data = collect();
 
         foreach ($mens_parfumes as $mens_parfume) {
@@ -55,10 +56,10 @@ class FrontEndController extends Controller
     {
         $id = $request->id;
         $data = collect();
-        $mens_parfumes = MensParfume::where('category_id', $id)->get();
-        $womens_parfumes = WomensParfume::where('category_id', $id)->get();
-        $casual_parfumes = CasualsParfume::where('category_id', $id)->get();
-        $sweets_parfume = SweetsParfume::where('category_id', $id)->get();
+        $mens_parfumes = Product::where('category_id', $id)->get();
+        $womens_parfumes = Product::where('category_id', $id)->get();
+        $casual_parfumes = Product::where('category_id', $id)->get();
+        $sweets_parfume = Product::where('category_id', $id)->get();
 
         foreach ($mens_parfumes as $mens_parfume) {
             $mens_parfume->type = 'mens_parfume';
@@ -87,28 +88,10 @@ class FrontEndController extends Controller
     {
         $data = '';
         $recommendations = [];
-
-        switch ($type) {
-            case 'mens_parfume':
-                $data = MensParfume::where('id', $parfume_id)->first();
-                $recommendations = MensParfume::where('id', '!=', $parfume_id)->first();
-                break;
-            case 'womens_parfume':
-                $data = WomensParfume::where('id', $parfume_id)->first();
-                $recommendations = WomensParfume::where('id', '!=', $parfume_id)->firts();
-                break;
-            case 'casual_parfume':
-                $data = CasualsParfume::where('id', $parfume_id)->first();
-                $recommendations = CasualsParfume::where('id', '!=', $parfume_id)->first();
-                break;
-            case 'sweet_parfume':
-                $data = SweetsParfume::where('id', $parfume_id)->first();
-                $recommendations = SweetsParfume::where('id', '!=', $parfume_id)->first();
-                break;
-            default:
-                break;
-        }
-
+        $data = Product::where('id', $parfume_id)->first();
+        $recommendations = Product::where('id', '!=', $parfume_id)->get();
+        // dd($recommendations);
+    
         return view('collection-detail', ['collection' => $data, 'recommendations' => $recommendations]);
     }
 }
