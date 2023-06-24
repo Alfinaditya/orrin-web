@@ -22,7 +22,7 @@
                                 <h3 class="card-title pt-2">Kategori
                                 </h3>
                                 <h5
-                                    class="card-title position-relative d-flex align-items-center justify-content-end pt-5 mb-0">
+                                    class="card-title position-relative d-flex align-items-center justify-content-end pt-5 mb-0">{{ $categories }} Posts
                                 </h5>
                             </div>
                         </div>
@@ -35,7 +35,7 @@
                                 <h3 class="card-title pt-2">Jenis
                                 </h3>
                                 <h5
-                                    class="card-title position-relative d-flex align-items-center justify-content-end pt-4 mb-0">
+                                    class="card-title position-relative d-flex align-items-center justify-content-end pt-5 mb-0">{{ $category_product }} Posts
                                 </h5>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                                 <h3 class="card-title pt-2">Product
                                 </h3>
                                 <h5
-                                    class="card-title position-relative d-flex align-items-center justify-content-end pt-4 mb-0">
+                                    class="card-title position-relative d-flex align-items-center justify-content-end pt-5 mb-0">{{ $product }} Posts
                                 </h5>
                             </div>
                         </div>

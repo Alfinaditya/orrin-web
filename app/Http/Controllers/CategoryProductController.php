@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categories;
 use App\Models\CategoryProduct;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
@@ -10,13 +11,26 @@ use Illuminate\Support\Facades\DB;
 
 class CategoryProductController extends Controller
 {
+    public function result()
+    {
+        $categories = Categories::with('products')->count();
+        $product = Product::all()->count();
+        $category_product = CategoryProduct::with('products')->count();
+// dd('ok');
+        return view('dashboard.index', [
+            'categories' => $categories,
+            'category_product' => $category_product,
+            'product' => $product,
+        ]);
+    }
+
     public function index(CategoryProduct $id)
     {
         return view('dashboard.index', [
             'data' => CategoryProduct::where('user_id', auth()->user()->id)
                 ->with('users')
                 ->get(),
-            'id' => $id
+            'id' => $id,
         ]);
     }
 
@@ -24,7 +38,7 @@ class CategoryProductController extends Controller
     {
         return view('dashboard.detail', [
             'id' => $id,
-            'data' => CategoryProduct::with('products')->where('id', '=', 'category_product_id' )
+            'data' => CategoryProduct::with('products')->where('id', '=', 'category_product_id'),
         ]);
     }
 

@@ -55,7 +55,11 @@ Route::get('/dashboard', [CategoryProductController::class, 'index'])->middlewar
 
 //Route Categories
 
-Route::get('/dashboard/kategori', [CategoriesController::class, 'cat']);
+Route::get('/dashboard', [CategoriesController::class, 'result']);
+
+Route::get('/dashboard', [CategoryProductController::class, 'result']);
+
+Route::get('/dashboard/kategori', [CategoriesController::class, 'index']);
 
 // Route::get('/dashboard/detail', [CategoriesController::class, 'detail_batch']);
 

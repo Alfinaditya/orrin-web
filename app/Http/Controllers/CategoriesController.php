@@ -11,17 +11,16 @@ use Illuminate\Support\Facades\Storage;
 
 class CategoriesController extends Controller
 {
-    public function index()
+    public function result()
     {
-        $result = Categories::with('products')->get()->all();
-
+        $result = Categories::with('products')->count();
+// dd('p');
         return view('dashboard.index', [
             'data' => $result
-
-        ], compact('result'));
+        ]);
     }
     
-    public function cat()
+    public function index()
     {
         return view('dashboard.categories.index', [
             'data' => Categories::where('user_id', auth()->user()->id)->with('users')->get(),
