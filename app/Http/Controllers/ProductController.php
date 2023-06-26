@@ -72,7 +72,6 @@ class ProductController extends Controller
 
     public function update(Request $request, Product $id)
     {
-
         $rules = [
             'category_id' => 'required',
             'category_product_id' => 'required',
