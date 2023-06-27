@@ -197,6 +197,19 @@ body {
     border: none;
     border-radius: 0px 8px;
 }
+
+.btn-primary:hover {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    width: 175px;
+    height: 45px;
+    padding: 8px;
+    background-color: transparent;
+    border: 1px solid #cfa968;
+    border-radius: 0px 8px;
+    transition: all 0.3s ease;
+}
 /* 
 .btn:hover {
     color: white;
