@@ -56,11 +56,6 @@ class ProductController extends Controller
         return redirect('/dashboard/product')->with('success', 'Data berhasil ditambahkan!');
     }
 
-    public function show(Product $product)
-    {
-        //
-    }
-
     public function edit(Product $id)
     {
         return view('dashboard.product.edit', [

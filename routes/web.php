@@ -43,15 +43,9 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::post('/logout', [LoginController::class, 'logout']);
 
-//Route Dashboard   
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard.index');
-// })->middleware('auth');
+//Route Dashboard
 
 Route::get('/dashboard', [CategoryProductController::class, 'index'])->middleware('auth')->name('login');
-
-// Route::get('/dashboard/detail/{id}', [CategoryProductController::class, 'detail']);
 
 //Route Categories
 

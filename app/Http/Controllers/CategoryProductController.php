@@ -16,7 +16,6 @@ class CategoryProductController extends Controller
         $categories = Categories::with('products')->count();
         $product = Product::all()->count();
         $category_product = CategoryProduct::with('products')->count();
-// dd('ok');
         return view('dashboard.index', [
             'categories' => $categories,
             'category_product' => $category_product,
@@ -141,9 +140,6 @@ class CategoryProductController extends Controller
             ->editColumn('image', function ($item) {
                 return asset('storage/' . $item->image);
             })
-            //    ->editColumn('image', function ($item) {
-            //     return asset('storage/' . $item->image);
-            // })
             ->addIndexColumn()
             ->make(true);
     }

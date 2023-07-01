@@ -14,7 +14,6 @@ class CategoriesController extends Controller
     public function result()
     {
         $result = Categories::with('products')->count();
-// dd('p');
         return view('dashboard.index', [
             'data' => $result
         ]);
