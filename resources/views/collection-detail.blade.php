@@ -2,8 +2,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div
+                <div class="col-lg-12"
                     style="display:flex;justify-content:left; margin-left:10px; align-items:center;padding-top:150px;padding-bottom:30px">
                     <img style="border-radius: 5px" width="400px" src="{{ asset('storage/' . $collection->image) }}"
                         alt="">
@@ -38,7 +37,6 @@
                         @endforeach
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 @endsection

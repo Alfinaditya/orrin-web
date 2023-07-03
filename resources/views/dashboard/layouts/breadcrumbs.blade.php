@@ -1,6 +1,3 @@
-{{-- {{ $url = request()->getPathInfo();
-    dd($url);
-}} --}}
 
 <?php
 $url = request()->getPathInfo();

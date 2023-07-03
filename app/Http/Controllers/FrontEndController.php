@@ -2,11 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CasualsParfume;
-use App\Models\MensParfume;
 use App\Models\Product;
-use App\Models\WomensParfume;
-use App\Models\SweetsParfume;
 use Illuminate\Http\Request;
 
 class FrontEndController extends Controller
@@ -80,7 +76,6 @@ class FrontEndController extends Controller
             $sweet_parfume->type = 'sweet_parfume';
             $data->push($sweet_parfume);
         }
-        // dd($data);
         return view('collection', ['collections' => $data, 'id' => $id]);
     }
 
@@ -90,7 +85,6 @@ class FrontEndController extends Controller
         $recommendations = [];
         $data = Product::where('id', $parfume_id)->first();
         $recommendations = Product::where('id', '!=', $parfume_id)->get();
-        // dd($recommendations);
     
         return view('collection-detail', ['collection' => $data, 'recommendations' => $recommendations]);
     }

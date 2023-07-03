@@ -1,15 +1,10 @@
 <?php
 
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\MensParfumeController;
-use App\Http\Controllers\WomensParfumeController;
-use App\Http\Controllers\SweetsParfumeController;
-use App\Http\Controllers\CasualsParfumeController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\CategoryProductController;
 use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\ProductController;
-use App\Models\CategoryProduct;
 use Illuminate\Support\Facades\Route;
 
 /*

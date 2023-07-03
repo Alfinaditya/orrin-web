@@ -7,7 +7,6 @@ use App\Models\CategoryProduct;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
 use App\Models\Product;
-use Illuminate\Support\Facades\DB;
 
 class CategoryProductController extends Controller
 {
@@ -123,15 +122,12 @@ class CategoryProductController extends Controller
 
         return Datatables::of($list_data)
             ->addColumn('kategori', function ($item) {
-                // dd($item->category_product);
                 return $item->categories->kategori;
             })
             ->addColumn('username', function ($item) {
-                // dd($item->users);
                 return $item->users->username;
             })
             ->addColumn('jenis', function ($item) {
-                // dd($item->users);
                 return $item->category_product->kategori;
             })
             ->addColumn('action', function ($item) {

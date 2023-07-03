@@ -28,7 +28,6 @@
                 <a style="text-decoration:none;"
                     href="/collection/{{ $id }}/detail/{{ $collection->id }}/{{ $collection->type }}">
                     <div class="product">
-                        {{-- src="{{ asset('storage/' . $collection->image) }}" --}}
                         <img src="{{ asset('storage/' . $collection->image) }}"
                         style="height:400px;width:270px;margin:15px;border-radius:15px"
                             alt="">
